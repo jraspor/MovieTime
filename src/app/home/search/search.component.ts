@@ -9,21 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   title = '';
-  result: Object;
+  movies: Array<Movie>;
 
-  searchMovie(title: string) {
-    this.omdbService.searchMovieByTitle(title)
-    .subscribe((result: any) => {
-        this.result = result;
-        //console.log(result);
-        console.log(this.result);
-      }
-    );
+  searchMovie(title) {
+    this.omdbService.searchMovieByTitle(this.title)
+      .subscribe(data => {
+        if(data.results !== null) {
+          for (let movie of data.results) {
+            this.movies.push(new Movie(movie.title, movie.release_date));
+          }
+        }
+        console.log(this.movies);
+      });
   }
 
   constructor(private omdbService: OmdbService) { }
 
   ngOnInit(): void {
+    this.movies = new Array<Movie>();
   }
-
 }
