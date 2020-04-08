@@ -1,0 +1,13 @@
+.margin {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.margin input {
+  width: 50%;
+}
+
+.margin button {
+  background-color: gray;
+  border-color: gray;
+}

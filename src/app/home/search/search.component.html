@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<form>
+  <div class="margin">
+    <div class="form-group">
+      <label for="titleInput">Search</label>
+      <input [(ngModel)] = "title" name = "title" type="title" class="form-control" id="titleInput" aria-describedby="help" placeholder="Title...">
+      <small id="help" class="form-text text-muted">Enter a title of a movie you want to search.</small>
+    </div>
+    <button (click) = "searchMovie(title)" type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+
