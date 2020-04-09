@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -48,6 +49,7 @@ import { Movie } from './movie';
     HttpClientModule,
     LayoutModule,
     MatDialogModule,
+    MatGridListModule
   ],
   providers: [OmdbService],
   bootstrap: [AppComponent]

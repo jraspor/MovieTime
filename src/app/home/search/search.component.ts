@@ -16,6 +16,7 @@ export class SearchComponent implements OnInit {
   comment = '';
 
   searchMovie(title) {
+    this.movies = [];
     this.omdbService.searchMovieByTitle(this.title)
       .subscribe(data => {
         if(data.results !== null) {
@@ -35,7 +36,7 @@ export class SearchComponent implements OnInit {
   }
 
   openDialog(movie: Movie) {
-    let dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
