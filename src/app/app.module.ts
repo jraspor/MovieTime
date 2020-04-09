@@ -52,7 +52,8 @@ import { TrendingComponent } from './home/trending/trending.component';
     HttpClientModule,
     LayoutModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTableModule,
   ],
   providers: [OmdbService],
   bootstrap: [AppComponent]

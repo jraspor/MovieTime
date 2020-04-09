@@ -2,20 +2,34 @@
 
 <br>
 
-<ul>
-  <li *ngFor = "let movie of userList">
-    &nbsp; {{ movie.Title }}
-    <br>
-    &nbsp; {{ movie.Year | date}}
-    <br>
-    &nbsp;
-    <div *ngIf = "movie.Comment">
-      My comment: {{ movie.Comment }}
-    </div>
-    <br>
-    <a mat-button (click) = "deleteMovie(movie)">
-      Delete
-    </a>
-    <br>
-  </li>
-</ul>
+<mat-table [dataSource]="userList" class="mat-elevation-z8 table">
+  <!-- Position Column -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Title}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="year">
+    <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Year | date}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="comment">
+    <mat-header-cell *matHeaderCellDef> Comment </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Comment}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="delete">
+    <mat-header-cell *matHeaderCellDef> Delete this entry </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <a mat-button (click) = "deleteMovie(element)">
+        <mat-icon class = "trash">
+          delete
+        </mat-icon>
+      </a>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

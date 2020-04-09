@@ -9,11 +9,15 @@ import { Movie } from '../movie';
 export class UserComponent implements OnInit {
   userList: Array<Movie>;
 
+  displayedColumns: string[] = ['title', 'year', 'comment', 'delete'];
+
   deleteMovie(movie: Movie) {
     const index = this.userList.indexOf(movie);
     this.userList.splice(index, 1);
 
     localStorage.setItem('userList', JSON.stringify(this.userList));
+
+    window.location.reload();
   }
 
   constructor() { }

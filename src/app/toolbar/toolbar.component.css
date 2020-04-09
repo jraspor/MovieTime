@@ -3,6 +3,10 @@
   color: #fff;
 }
 
+a:hover {
+  color: gray;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
