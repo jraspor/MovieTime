@@ -2,20 +2,22 @@
 export interface IMovie {
   Title: string;
   Year: string;
-  imdbID?: string;
   Type?: string;
-  Poster?: string;
+  Poster: string;
+  Comment?: string;
 }
 
 export class Movie implements IMovie {
   public Title: string;
   public Year: string;
-  public imdbID?: string;
   public Type?: string;
-  public Poster?: string;
+  public Poster: string;
+  public Comment?: string;
 
-  constructor(title: string, year: string) {
+  constructor(title: string, year: string, poster: string, comment?: string) {
     this.Title = title;
     this.Year = year;
+    this.Poster = poster;
+    this.Comment = comment;
   }
 }

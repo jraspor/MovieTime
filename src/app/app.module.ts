@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { LayoutModule } from '@angular/cdk/layout';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -13,11 +15,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SearchComponent } from './home/search/search.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DialogComponent } from './home/search/dialog/dialog.component';
 
 import {OmdbService} from './omdb.service';
 
 import { Movie } from './movie';
-import { WelcomeComponent } from './welcome/welcome.component';
+
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ToolbarComponent,
     SearchComponent,
     WelcomeComponent,
+    DialogComponent,
     ],
+  entryComponents: [
+    DialogComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -38,6 +46,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    LayoutModule,
+    MatDialogModule,
   ],
   providers: [OmdbService],
   bootstrap: [AppComponent]

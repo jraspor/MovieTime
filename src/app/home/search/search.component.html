@@ -11,3 +11,18 @@
   </div>
 </form>
 
+<br><br>
+
+<table style="width:100%" class="table table-striped">
+  <tr *ngFor = "let movie of movies" scope="col">
+    <th> {{ movie.Title }} </th>
+    <th> {{ movie.Year | date}} </th>
+    <th>
+      <a mat-button class = "button" (click) = "addToFavorites(movie)">
+        <mat-icon>
+          favorite
+        </mat-icon>
+      </a>
+    </th>
+  </tr>
+</table>
