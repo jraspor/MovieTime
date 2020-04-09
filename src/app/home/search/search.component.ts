@@ -13,6 +13,7 @@ export class SearchComponent implements OnInit {
   title = '';
   movies: Array<Movie>;
   userList: Movie[] = [];
+  comment = '';
 
   searchMovie(title) {
     this.omdbService.searchMovieByTitle(this.title)
@@ -27,15 +28,20 @@ export class SearchComponent implements OnInit {
   }
 
   addToFavorites(movie: Movie) {
-    this.openDialog();
     console.log(movie);
-    this.userList.push(new Movie(movie.Title, movie.Year, movie.Poster));
+    this.userList.push(new Movie(movie.Title, movie.Year, movie.Poster, this.comment));
 
     console.log(this.userList);
   }
 
-  openDialog() {
-    this.dialog.open(DialogComponent);
+  openDialog(movie: Movie) {
+    let dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.comment = result;
+      this.addToFavorites(movie);
+    });
   }
 
   constructor(private omdbService: OmdbService, public dialog: MatDialog) {

@@ -18,7 +18,7 @@
     <th> {{ movie.Title }} </th>
     <th> {{ movie.Year | date}} </th>
     <th>
-      <a mat-button class = "button" (click) = "addToFavorites(movie)">
+      <a mat-button class = "button" (click) = "openDialog(movie)">
         <mat-icon>
           favorite
         </mat-icon>

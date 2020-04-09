@@ -10,7 +10,7 @@ export class DialogComponent implements OnInit {
 
   addComment(comment) {
     this.comment = comment;
-    console.log(comment);
+    return(comment);
   }
 
   constructor() { }
