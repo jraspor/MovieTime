@@ -2,7 +2,8 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Movie } from './../../movie';
 import { OmdbService } from './../../omdb.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-search',
@@ -17,6 +18,7 @@ export class SearchComponent implements OnInit {
 
   searchMovie(title) {
     this.movies = [];
+
     this.omdbService.searchMovieByTitle(this.title)
       .subscribe(data => {
         if(data.results !== null) {
@@ -24,7 +26,7 @@ export class SearchComponent implements OnInit {
             this.movies.push(new Movie(movie.title, movie.release_date, movie.poster_path));
           }
         }
-        //console.log(this.movies);
+        // console.log(this.movies);
       });
   }
 
@@ -43,7 +45,10 @@ export class SearchComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       this.comment = result;
-      this.addToFavorites(movie);
+
+      if(this.comment) {
+        this.addToFavorites(movie);
+      }
     });
   }
 

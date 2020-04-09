@@ -7,8 +7,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
