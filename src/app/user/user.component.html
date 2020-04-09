@@ -1,1 +1,18 @@
-<p>User movie list</p>
+<p>My favorite movies</p>
+
+<br>
+
+<ul>
+  <li *ngFor = "let movie of userList">
+    &nbsp; {{ movie.Title }}
+    <br>
+    &nbsp; {{ movie.Year | date}}
+    <br>
+    &nbsp; {{ movie.Comment }}
+    <br>
+    <a mat-button>
+      Delete
+    </a>
+    <br>
+  </li>
+</ul>
