@@ -1,0 +1,14 @@
+<br>
+<p>
+  Currently trending movies:
+</p>
+
+<mat-grid-list cols = 3 rowHeight = "2:1">
+  <mat-grid-tile *ngFor = "let movie of movies">
+    <img src = "{{movie.Poster}}" alt="">
+
+    &nbsp; {{ movie.Title }}
+    <br>
+    &nbsp; {{ movie.Year | date}}
+  </mat-grid-tile>
+</mat-grid-list>

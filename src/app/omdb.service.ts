@@ -14,5 +14,12 @@ export class OmdbService {
     return this.http
       .get<any>(url);
     }
+
+    getPopularMovies(): Observable<any> {
+      const url = 'https://api.themoviedb.org/3/discover/movie?api_key=95d091807075bbbc0e231760cb20bb94&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
+
+      return this.http
+        .get<any>(url);
+    }
   constructor(private http: HttpClient) { }
 }

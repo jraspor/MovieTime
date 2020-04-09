@@ -22,6 +22,7 @@ import { DialogComponent } from './home/search/dialog/dialog.component';
 import {OmdbService} from './omdb.service';
 
 import { Movie } from './movie';
+import { TrendingComponent } from './home/trending/trending.component';
 
 
 
@@ -34,6 +35,7 @@ import { Movie } from './movie';
     SearchComponent,
     WelcomeComponent,
     DialogComponent,
+    TrendingComponent,
     ],
   entryComponents: [
     DialogComponent,
