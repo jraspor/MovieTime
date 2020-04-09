@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   flag = false;
 
-  setFlag() {
-    this.flag = true;
+  setFlag(event) {
+    this.flag = event;
     console.log(this.flag);
   }
   constructor() { }

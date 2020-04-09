@@ -52,6 +52,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
+  clearSearch() {
+    this.movies = [];
+    window.location.reload();
+  }
+
   constructor(private omdbService: OmdbService, public dialog: MatDialog) {
    }
 
