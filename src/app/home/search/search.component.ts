@@ -24,15 +24,17 @@ export class SearchComponent implements OnInit {
             this.movies.push(new Movie(movie.title, movie.release_date, movie.poster_path));
           }
         }
-        console.log(this.movies);
+        //console.log(this.movies);
       });
   }
 
   addToFavorites(movie: Movie) {
-    console.log(movie);
-    this.userList.push(new Movie(movie.Title, movie.Year, movie.Poster, this.comment));
+    const userList = JSON.parse(localStorage.getItem('userList'));
 
-    console.log(this.userList);
+    userList.push(new Movie(movie.Title, movie.Year, movie.Poster, this.comment));
+
+    localStorage.setItem('userList', JSON.stringify(userList));
+    //console.log(this.userList);
   }
 
   openDialog(movie: Movie) {
