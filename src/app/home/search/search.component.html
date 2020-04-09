@@ -15,6 +15,9 @@
 
 <table style="width:100%" class="table table-striped">
   <tr *ngFor = "let movie of movies" scope="col">
+    <th>
+      <img src = "{{movie.Poster}}" alt="">
+    </th>
     <th> {{ movie.Title }} </th>
     <th> {{ movie.Year | date}} </th>
     <th>

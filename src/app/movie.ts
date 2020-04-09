@@ -17,7 +17,7 @@ export class Movie implements IMovie {
   constructor(title: string, year: string, poster: string, comment?: string) {
     this.Title = title;
     this.Year = year;
-    this.Poster = poster;
+    this.Poster = 'https://image.tmdb.org/t/p/w500' + poster;
     this.Comment = comment;
   }
 }
