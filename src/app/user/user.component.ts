@@ -7,7 +7,14 @@ import { Movie } from '../movie';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  userList: Array<Movie>
+  userList: Array<Movie>;
+
+  deleteMovie(movie: Movie) {
+    const index = this.userList.indexOf(movie);
+    this.userList.splice(index, 1);
+
+    localStorage.setItem('userList', JSON.stringify(this.userList));
+  }
 
   constructor() { }
 

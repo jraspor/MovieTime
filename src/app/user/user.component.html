@@ -8,9 +8,12 @@
     <br>
     &nbsp; {{ movie.Year | date}}
     <br>
-    &nbsp; {{ movie.Comment }}
+    &nbsp;
+    <div *ngIf = "movie.Comment">
+      My comment: {{ movie.Comment }}
+    </div>
     <br>
-    <a mat-button>
+    <a mat-button (click) = "deleteMovie(movie)">
       Delete
     </a>
     <br>
