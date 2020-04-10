@@ -15,7 +15,17 @@
 }
 
 img {
-  width: 25%;
+  width: 100%;
+}
+
+.onClickTextOverImage{
+  width:200px;
+  height:200px;
+  background-size:cover;
+  display:inline-block;
+  margin:1px;
+  box-shadow:0 0 16px rgba(0,0,0,0.5);
+  position:relative;
 }
 
 

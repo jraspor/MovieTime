@@ -46,7 +46,7 @@ export class SearchComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
       this.comment = result;
 
-      if(this.comment) {
+      if(result != "cancel") {
         this.addToFavorites(movie);
       }
     });
